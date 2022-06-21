@@ -29,7 +29,7 @@ def color_tips():
     cv2.imshow('colors', board)
 
 
-classifier = None # Global to avoid reloading CNN at each run
+global classifier # Global to avoid reloading CNN at each run
 def run(input_path_img, output_root):
     '''
         ele:min-grad: gradient threshold to produce binary map         
