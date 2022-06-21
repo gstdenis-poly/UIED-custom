@@ -97,4 +97,4 @@ def run(input_path_img, output_root):
 
 
 if __name__ == '__main__':
-    run_single(sys.argv[1], sys.argv[2])
+    run(sys.argv[1], sys.argv[2])
