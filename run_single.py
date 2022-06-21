@@ -56,14 +56,14 @@ def run(input_path_img, output_root):
 
     is_ip = True
     is_clf = True
-    is_ocr_google = False
-    is_ocr_east = True
+    is_ocr_google = True
+    is_ocr_east = False
     is_merge = False
 
     if is_ocr_google:
         import detect_text.text_detection as text
         os.makedirs(pjoin(output_root, 'ocr'), exist_ok=True)
-        text.text_detection(input_path_img, output_root, show=False, method='google')
+        text.text_detection(input_path_img, output_root, show=False, method='paddle')
     elif is_ocr_east:
         import detect_text_east.ocr_east as ocr
         import detect_text_east.lib_east.eval as eval
