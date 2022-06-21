@@ -56,21 +56,13 @@ def run(input_path_img, output_root):
 
     is_ip = True
     is_clf = True
-    is_ocr_google = True
-    is_ocr_east = False
+    is_ocr = True
     is_merge = False
 
-    if is_ocr_google:
+    if is_ocr:
         import detect_text.text_detection as text
         os.makedirs(pjoin(output_root, 'ocr'), exist_ok=True)
         text.text_detection(input_path_img, output_root, show=False, method='paddle')
-    elif is_ocr_east:
-        import detect_text_east.ocr_east as ocr
-        import detect_text_east.lib_east.eval as eval
-        os.makedirs(pjoin(output_root, 'ocr'), exist_ok=True)
-        models = eval.load()
-        ocr.east(input_path_img, output_root, models, key_params['max-word-inline-gap'],
-                 resize_by_height=resized_height, show=False)
 
     if is_ip:
         import detect_compo.ip_region_proposal as ip
