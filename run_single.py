@@ -55,7 +55,7 @@ def run(input_path_img, output_root):
     # color_tips()
 
     is_ip = True
-    is_clf = False
+    is_clf = True
     is_ocr_google = False
     is_ocr_east = False
     is_merge = False
