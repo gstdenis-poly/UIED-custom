@@ -29,7 +29,7 @@ def color_tips():
     cv2.imshow('colors', board)
 
 
-def run_single(input_path_img, output_root):
+def run(input_path_img, output_root):
     '''
         ele:min-grad: gradient threshold to produce binary map         
         ele:ffl-block: fill-flood threshold
