@@ -72,9 +72,9 @@ def run(input_path_img, output_root):
         if is_clf:
             classifier = {}
             from cnn.CNN import CNN
-            classifier['Image'] = CNN('Image')
+            # classifier['Image'] = CNN('Image')
             classifier['Elements'] = CNN('Elements')
-            classifier['Noise'] = CNN('Noise')
+            # classifier['Noise'] = CNN('Noise')
         ip.compo_detection(input_path_img, output_root, key_params,
                            classifier=classifier, resize_by_height=resized_height, show=False)
 

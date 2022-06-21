@@ -68,17 +68,17 @@ def compo_detection(input_img_path, output_root, uied_params,
     draw.draw_bounding_box(org, uicompos, show=show, name='merged compo', write_path=pjoin(ip_root, name + '.jpg'), wait_key=wai_key)
 
     # *** Step 5 *** image inspection: recognize image -> remove noise in image -> binarize with larger threshold and reverse -> rectangular compo detection
-    if classifier is not None:
-        classifier['Image'].predict([compo.compo_clipping(org) for compo in uicompos], uicompos)
-        draw.draw_bounding_box_class(org, uicompos, show=show)
-        uicompos = det.rm_noise_in_large_img(uicompos, org)
-        draw.draw_bounding_box_class(org, uicompos, show=show)
-        det.detect_compos_in_img(uicompos, binary, org)
-        draw.draw_bounding_box(org, uicompos, show=show)
-    if classifier is not None:
-        classifier['Noise'].predict([compo.compo_clipping(org) for compo in uicompos], uicompos)
-        draw.draw_bounding_box_class(org, uicompos, show=show)
-        uicompos = det.rm_noise_compos(uicompos)
+    #if classifier is not None:
+    #    classifier['Image'].predict([compo.compo_clipping(org) for compo in uicompos], uicompos)
+    #    draw.draw_bounding_box_class(org, uicompos, show=show)
+    #    uicompos = det.rm_noise_in_large_img(uicompos, org)
+    #    draw.draw_bounding_box_class(org, uicompos, show=show)
+    #    det.detect_compos_in_img(uicompos, binary, org)
+    #    draw.draw_bounding_box(org, uicompos, show=show)
+    #if classifier is not None:
+    #    classifier['Noise'].predict([compo.compo_clipping(org) for compo in uicompos], uicompos)
+    #    draw.draw_bounding_box_class(org, uicompos, show=show)
+    #    uicompos = det.rm_noise_compos(uicompos)
 
     # *** Step 6 *** element classification: all category classification
     if classifier is not None:
