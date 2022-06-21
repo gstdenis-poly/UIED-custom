@@ -46,7 +46,8 @@ def compo_detection(input_img_path, output_root, uied_params,
     ip_root = file.build_directory(pjoin(output_root, "ip"))
 
     # *** Step 1 *** pre-processing: read img -> get binary map
-    org, grey = pre.read_img(input_img_path, resize_by_height)
+    # org, grey = pre.read_img(input_img_path, resize_by_height)
+    org, grey = pre.read_img(input_img_path, None)
     binary = pre.binarization(org, grad_min=int(uied_params['min-grad']))
 
     # *** Step 2 *** element detection
@@ -83,8 +84,8 @@ def compo_detection(input_img_path, output_root, uied_params,
     # *** Step 6 *** element classification: all category classification
     if classifier is not None:
         classifier['Elements'].predict([compo.compo_clipping(org) for compo in uicompos], uicompos)
-        draw.draw_bounding_box_class(org, uicompos, show=show, name='cls', write_path=pjoin(ip_root, 'result.jpg'))
-        draw.draw_bounding_box_class(org, uicompos, write_path=pjoin(output_root, 'result.jpg'))
+        draw.draw_bounding_box_class(org, uicompos, show=show, name='cls', write_path=pjoin(ip_root, name + '.jpg'))
+        # draw.draw_bounding_box_class(org, uicompos, write_path=pjoin(output_root, 'result.jpg'))
 
     # *** Step 7 *** save detection result
     Compo.compos_update(uicompos, org.shape)
