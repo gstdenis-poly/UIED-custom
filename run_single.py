@@ -29,8 +29,7 @@ def color_tips():
     cv2.imshow('colors', board)
 
 
-if __name__ == '__main__':
-
+def run_single(input_path_img, output_root):
     '''
         ele:min-grad: gradient threshold to produce binary map         
         ele:ffl-block: fill-flood threshold
@@ -51,10 +50,6 @@ if __name__ == '__main__':
     # Specific : Parameters of Web application
     key_params = {'min-grad':3, 'ffl-block':5, 'min-ele-area':25, 'max-word-inline-gap':4, 'max-line-gap':4,
                   'merge-contained-ele':True, 'merge-line-to-paragraph':False, 'remove-bar':True}
-
-    # set input image path
-    input_path_img = sys.argv[1] if len(sys.argv) > 0 else 'data/input/497.jpg'
-    output_root = '/content/drive/MyDrive/Polytechnique/INF6909/database/tmp/detections'
 
     resized_height = resize_height_by_longest_edge(input_path_img, resize_length=800)
     # color_tips()
@@ -99,3 +94,7 @@ if __name__ == '__main__':
         ocr_path = pjoin(output_root, 'ocr', str(name) + '.json')
         merge.merge(input_path_img, compo_path, ocr_path, pjoin(output_root, 'merge'),
                     is_remove_bar=key_params['remove-bar'], is_paragraph=key_params['merge-line-to-paragraph'], show=False)
+
+
+if __name__ == '__main__':
+    run_single(sys.argv[1], sys.argv[2])
