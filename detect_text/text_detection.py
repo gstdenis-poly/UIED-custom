@@ -150,7 +150,7 @@ def text_detection(input_file='../data/input/30800.jpg', output_file='../data/ou
         from paddleocr import PaddleOCR
         print('*** Detect Text through Paddle OCR ***')
         if paddle_model is None:
-            paddle_model = PaddleOCR(use_angle_cls=True, lang="ch")
+            paddle_model = PaddleOCR(use_angle_cls=True, lang="en")
         result = paddle_model.ocr(input_file, cls=True)
         texts = text_cvt_orc_format_paddle(result)
     else:
