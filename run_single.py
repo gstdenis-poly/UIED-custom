@@ -57,7 +57,7 @@ def run(input_path_img, output_root):
     is_ip = True
     is_clf = True
     is_ocr_google = False
-    is_ocr_east = False
+    is_ocr_east = True
     is_merge = False
 
     if is_ocr_google:
