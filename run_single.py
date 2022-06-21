@@ -29,6 +29,7 @@ def color_tips():
     cv2.imshow('colors', board)
 
 
+classifier = None # Global to avoid reloading CNN at each run
 def run(input_path_img, output_root):
     '''
         ele:min-grad: gradient threshold to produce binary map         
@@ -68,8 +69,7 @@ def run(input_path_img, output_root):
         import detect_compo.ip_region_proposal as ip
         os.makedirs(pjoin(output_root, 'ip'), exist_ok=True)
         # switch of the classification func
-        classifier = None
-        if is_clf:
+        if is_clf and classifier == None:
             classifier = {}
             from cnn.CNN import CNN
             # classifier['Image'] = CNN('Image')
