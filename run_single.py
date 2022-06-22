@@ -29,7 +29,7 @@ def color_tips():
     cv2.imshow('colors', board)
 
 
-def run(input_path_img, output_root, classifier=None):
+def run(input_path_img, output_root):
     '''
         ele:min-grad: gradient threshold to produce binary map         
         ele:ffl-block: fill-flood threshold
@@ -68,7 +68,7 @@ def run(input_path_img, output_root, classifier=None):
         import detect_compo.ip_region_proposal as ip
         os.makedirs(pjoin(output_root, 'ip'), exist_ok=True)
         # switch of the classification func
-        if is_clf and classifier == None:
+        if is_clf:
             classifier = {}
             from cnn.CNN import CNN
             # classifier['Image'] = CNN('Image')
