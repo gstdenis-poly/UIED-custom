@@ -29,8 +29,7 @@ def color_tips():
     cv2.imshow('colors', board)
 
 
-global classifier # Global to avoid reloading CNN at each run
-def run(input_path_img, output_root):
+def run(input_path_img, output_root, classifier=None):
     '''
         ele:min-grad: gradient threshold to produce binary map         
         ele:ffl-block: fill-flood threshold
