@@ -87,7 +87,7 @@ class CNN:
         for i in range(len(imgs)):
             X = self.preprocess_img(imgs[i])
             # Specific: only consider predictions of required element classes
-            predictions = self.model.predict(X).tolist()
+            predictions = self.model.predict(X).tolist()[0]
             while len(predictions) > 0:
                 class_idx = np.argmax(np.array(predictions))
                 elem_class = self.class_map[class_idx]
