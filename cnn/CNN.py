@@ -90,11 +90,15 @@ class CNN:
             predictions = self.model.predict(X).tolist()
             while len(predictions) > 0:
                 class_idx = np.argmax(np.array(predictions))
-                if not cfg.required_class[self.class_map[class_idx]]:
+                elem_class = self.class_map[class_idx]
+
+                print(class_idx)
+                print(elem_class)
+                if not cfg.required_class[elem_class]:
                     del predictions[class_idx]
                     continue
 
-                Y = self.class_map[class_idx]
+                Y = elem_class
                 compos[i].category = Y
                 break
 
