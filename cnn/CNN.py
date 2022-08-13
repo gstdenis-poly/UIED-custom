@@ -102,9 +102,6 @@ class CNN:
             Y = elem_class
             if class_prediction >= cfg.class_threshold:
                 compos[i].category = Y
-            else:
-                del compos[i]
-
             if show:
                 print(Y)
                 cv2.imshow('element', imgs[i])
