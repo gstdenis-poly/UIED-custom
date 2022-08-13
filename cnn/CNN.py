@@ -89,7 +89,7 @@ class CNN:
             # Specific: only consider predictions of required element classes
             predictions = self.model.predict(X).tolist()
             while len(predictions) > 0:
-                class_idx = np.argmax(predictions)
+                class_idx = np.argmax(np.array(predictions))
                 if not cfg.required_class[self.class_map[class_idx]]:
                     del predictions[class_idx]
                     continue
