@@ -17,7 +17,7 @@ class Config:
         self.required_class = {'Button':True, 'CheckBox':True, 'Chronometer':False, 'EditText':True,
                                'ImageButton':False, 'ImageView':False, 'ProgressBar':False, 'RadioButton':True,
                                'RatingBar':False, 'SeekBar':False, 'Spinner':False, 'Switch':False,
-                               'ToggleButton':False, 'VideoView':False, 'TextView':True}
+                               'ToggleButton':False, 'VideoView':False, 'TextView':False}
         self.class_number = len(self.element_class)
 
         # setting EAST (ocr) model
