@@ -90,8 +90,10 @@ class CNN:
             predictions = self.model.predict(X).tolist()[0]
             while len(predictions) > 0:
                 class_idx = np.argmax(np.array(predictions))
+                class_prediction = predictions[class_idx]
                 elem_class = self.class_map[class_idx]
-                if not cfg.required_class[elem_class]:
+                if not cfg.required_class[elem_class] or \
+                   class_prediction < cfg.class_threshold:
                     del predictions[class_idx]
                     continue
 
