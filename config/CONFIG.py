@@ -11,10 +11,13 @@ class Config:
         # self.class_map = ['button', 'input', 'icon', 'img', 'text']
         # self.CNN_PATH = 'E:/Mulong/Model/rico_compos/cnn-rico-1.h5'
         self.CNN_PATH = '/content/drive/MyDrive/Polytechnique/INF6909/server/models/cnn-rico-1.h5'
-        # self.element_class = ['Button', 'CheckBox', 'Chronometer', 'EditText', 'ImageButton', 'ImageView',
-        #                       'ProgressBar', 'RadioButton', 'RatingBar', 'SeekBar', 'Spinner', 'Switch',
-        #                       'ToggleButton', 'VideoView', 'TextView']
-        self.element_class = ['Button', 'CheckBox', 'EditText', 'RadioButton', 'TextView']
+        self.element_class = ['Button', 'CheckBox', 'Chronometer', 'EditText', 'ImageButton', 'ImageView',
+                              'ProgressBar', 'RadioButton', 'RatingBar', 'SeekBar', 'Spinner', 'Switch',
+                              'ToggleButton', 'VideoView', 'TextView']
+        self.required_class = {'Button':True, 'CheckBox':True, 'Chronometer':False, 'EditText':True,
+                               'ImageButton':False, 'ImageView':False, 'ProgressBar':False, 'RadioButton':True,
+                               'RatingBar':False, 'SeekBar':False, 'Spinner':False, 'Switch':False,
+                               'ToggleButton':False, 'VideoView':False, 'TextView':True}
         self.class_number = len(self.element_class)
 
         # setting EAST (ocr) model

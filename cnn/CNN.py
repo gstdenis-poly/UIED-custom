@@ -86,12 +86,13 @@ class CNN:
             return
         for i in range(len(imgs)):
             X = self.preprocess_img(imgs[i])
-            Y_a = self.model.predict(X)
-            print(Y_a)
-            Y_b = np.argmax(Y_a)
-            print(Y_a)
-            print(self.class_map)
-            Y = self.class_map[np.argmax(self.model.predict(X))]
+            # Specific: set prediction to 0 for unrequired components
+            preds = self.model.predict(X)
+            for i in range(len(preds)):
+                elem_class = cfg.element_class[i]
+                preds[i] = preds[i] if cfg.required_class[elem_class] else 0
+            
+            Y = self.class_map[np.argmax(preds)]
             compos[i].category = Y
             if show:
                 print(Y)
