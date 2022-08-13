@@ -86,6 +86,11 @@ class CNN:
             return
         for i in range(len(imgs)):
             X = self.preprocess_img(imgs[i])
+            Y_a = self.model.predict(X)
+            print(Y_a)
+            Y_b = np.argmax(Y_a)
+            print(Y_a)
+            print(self.class_map)
             Y = self.class_map[np.argmax(self.model.predict(X))]
             compos[i].category = Y
             if show:
