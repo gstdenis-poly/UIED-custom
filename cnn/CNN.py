@@ -100,8 +100,7 @@ class CNN:
                     break
 
             Y = elem_class
-            if class_prediction >= cfg.class_threshold:
-                compos[i].category = Y
+            compos[i].category = elem_class if class_prediction >= cfg.class_threshold else None
             if show:
                 print(Y)
                 cv2.imshow('element', imgs[i])
