@@ -94,6 +94,7 @@ class CNN:
 
                 print(class_idx)
                 print(elem_class)
+                print(predictions)
                 if not cfg.required_class[elem_class]:
                     del predictions[class_idx]
                     continue
