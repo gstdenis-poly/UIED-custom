@@ -91,10 +91,6 @@ class CNN:
             while len(predictions) > 0:
                 class_idx = np.argmax(np.array(predictions))
                 elem_class = self.class_map[class_idx]
-
-                print(class_idx)
-                print(elem_class)
-                print(predictions)
                 if not cfg.required_class[elem_class]:
                     del predictions[class_idx]
                     continue
