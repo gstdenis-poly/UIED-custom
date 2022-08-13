@@ -18,7 +18,7 @@ class Config:
                                'ImageButton':False, 'ImageView':False, 'ProgressBar':False, 'RadioButton':True,
                                'RatingBar':False, 'SeekBar':False, 'Spinner':False, 'Switch':False,
                                'ToggleButton':False, 'VideoView':False, 'TextView':True}
-        self.class_threshold = 0.20 # Specific: minimum fiability of prediction for a class
+        self.class_threshold = 0.1 # Specific: minimum fiability of prediction for a class
         self.class_number = len(self.element_class)
 
         # setting EAST (ocr) model
