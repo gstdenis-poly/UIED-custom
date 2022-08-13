@@ -66,6 +66,7 @@ def compo_detection(input_img_path, output_root, uied_params,
     # *** Step 4 ** nesting inspection: check if big compos have nesting element
     uicompos += nesting_inspection(org, grey, uicompos, ffl_block=uied_params['ffl-block'])
     Compo.compos_update(uicompos, org.shape)
+    draw.draw_bounding_box(org, uicompos, show=show, name='merged compo', write_path=pjoin(ip_root, name + '.jpg'), wait_key=wai_key)
 
     # *** Step 5 *** image inspection: recognize image -> remove noise in image -> binarize with larger threshold and reverse -> rectangular compo detection
     #if classifier is not None:
@@ -85,8 +86,6 @@ def compo_detection(input_img_path, output_root, uied_params,
         classifier['Elements'].predict([compo.compo_clipping(org) for compo in uicompos], uicompos)
         draw.draw_bounding_box_class(org, uicompos, show=show, name='cls', write_path=pjoin(ip_root, name + '.jpg'))
         # draw.draw_bounding_box_class(org, uicompos, write_path=pjoin(output_root, 'result.jpg'))
-    else:
-        draw.draw_bounding_box(org, uicompos, show=show, name='merged compo', write_path=pjoin(ip_root, name + '.jpg'), wait_key=wai_key)
 
     # *** Step 7 *** save detection result
     Compo.compos_update(uicompos, org.shape)

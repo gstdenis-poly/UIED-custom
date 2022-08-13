@@ -22,9 +22,6 @@ def draw_bounding_box_class(org, components, color_map=C.COLOR, line=2, show=Fal
     """
     board = org.copy()
     for compo in components:
-        if compo.category == None:
-            continue
-
         bbox = compo.put_bbox()
         board = cv2.rectangle(board, (bbox[0], bbox[1]), (bbox[2], bbox[3]), color_map[compo.category], line)
         # board = cv2.putText(board, compo.category, (bbox[0]+5, bbox[1]+20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color_map[compo.category], 2)

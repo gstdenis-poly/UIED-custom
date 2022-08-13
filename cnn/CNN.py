@@ -87,20 +87,18 @@ class CNN:
         for i in range(len(imgs)):
             X = self.preprocess_img(imgs[i])
             # Specific: only consider predictions of required element classes
-            elem_class = None
-            class_prediction = 0
             predictions = self.model.predict(X).tolist()[0]
             while len(predictions) > 0:
                 class_idx = np.argmax(np.array(predictions))
                 elem_class = self.class_map[class_idx]
-                class_prediction = predictions[class_idx]
                 if not cfg.required_class[elem_class]:
                     del predictions[class_idx]
-                else:
-                    break
+                    continue
 
-            Y = elem_class
-            compos[i].category = elem_class if class_prediction >= cfg.class_threshold else None
+                Y = elem_class
+                compos[i].category = elem_class
+                break
+
             if show:
                 print(Y)
                 cv2.imshow('element', imgs[i])
