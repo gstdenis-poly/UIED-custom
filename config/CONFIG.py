@@ -14,10 +14,10 @@ class Config:
         self.element_class = ['Button', 'CheckBox', 'Chronometer', 'EditText', 'ImageButton', 'ImageView',
                               'ProgressBar', 'RadioButton', 'RatingBar', 'SeekBar', 'Spinner', 'Switch',
                               'ToggleButton', 'VideoView', 'TextView']
-        self.required_class = {'Button':True, 'CheckBox':True, 'Chronometer':False, 'EditText':True,
-                               'ImageButton':False, 'ImageView':False, 'ProgressBar':False, 'RadioButton':True,
-                               'RatingBar':False, 'SeekBar':False, 'Spinner':False, 'Switch':False,
-                               'ToggleButton':False, 'VideoView':False, 'TextView':False}
+        self.required_class = {'Button':True, 'CheckBox':True, 'Chronometer':True, 'EditText':True,
+                               'ImageButton':True, 'ImageView':True, 'ProgressBar':True, 'RadioButton':True,
+                               'RatingBar':True, 'SeekBar':True, 'Spinner':True, 'Switch':True,
+                               'ToggleButton':True, 'VideoView':True, 'TextView':True}
         self.class_number = len(self.element_class)
 
         # setting EAST (ocr) model
