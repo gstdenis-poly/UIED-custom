@@ -10,7 +10,7 @@ class Config:
         # self.MODEL_PATH = 'E:\\Mulong\\Model\\UI2CODE\\cnn6_icon.h5'
         # self.class_map = ['button', 'input', 'icon', 'img', 'text']
         # self.CNN_PATH = 'E:/Mulong/Model/rico_compos/cnn-rico-1.h5'
-        self.CNN_PATH = '/content/drive/MyDrive/Polytechnique/INF6909/server/models/cnn-rico-1.h5'
+        self.CNN_PATH = '/home/gstdenis/projects/def-gabilode/gstdenis/INF6903/server/models/cnn-rico-1.h5'
         self.element_class = ['Button', 'CheckBox', 'Chronometer', 'EditText', 'ImageButton', 'ImageView',
                               'ProgressBar', 'RadioButton', 'RatingBar', 'SeekBar', 'Spinner', 'Switch',
                               'ToggleButton', 'VideoView', 'TextView']
@@ -21,7 +21,7 @@ class Config:
         self.class_number = len(self.element_class)
 
         # setting EAST (ocr) model
-        self.EAST_PATH = '/content/drive/MyDrive/Polytechnique/INF6909/server/models/east_icdar2015_resnet_v1_50_rbox'
+        self.EAST_PATH = '/home/gstdenis/projects/def-gabilode/gstdenis/INF6903/server/models/east_icdar2015_resnet_v1_50_rbox'
 
         self.COLOR = {'Button': (0, 255, 0), 'CheckBox': (0, 0, 255), 'Chronometer': (255, 166, 166),
                       'EditText': (255, 166, 0),
