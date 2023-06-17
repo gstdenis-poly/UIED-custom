@@ -439,6 +439,7 @@ class PaddleOCR(predict_system.TextSystem):
                 Path(__file__).parent / rec_model_config['dict_path'])
 
         logger.debug(params)
+        params.det_db_score_mode = 'slow'
         # init det_model and rec_model
         super().__init__(params)
 
