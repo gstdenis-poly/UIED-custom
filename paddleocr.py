@@ -419,9 +419,9 @@ class PaddleOCR(predict_system.TextSystem):
             params.cls_model_dir,
             os.path.join(BASE_DIR, 'whl', 'cls'), cls_model_config['url'])
         if params.ocr_version == 'PP-OCRv3':
-            params.rec_image_shape = "3, 1200, 3840"
+            params.rec_image_shape = "3, 100, 320"
         else:
-            params.rec_image_shape = "3, 1200, 3840"
+            params.rec_image_shape = "3, 100, 320"
         # download model
         maybe_download(params.det_model_dir, det_url)
         maybe_download(params.rec_model_dir, rec_url)
