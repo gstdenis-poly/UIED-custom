@@ -51,7 +51,7 @@ def run(input_path_img, output_root):
     key_params = {'min-grad':3, 'ffl-block':5, 'min-ele-area':25, 'max-word-inline-gap':4, 'max-line-gap':4,
                   'merge-contained-ele':True, 'merge-line-to-paragraph':False, 'remove-bar':True}
 
-    resized_height = resize_height_by_longest_edge(input_path_img, resize_length=800)
+    #resized_height = resize_height_by_longest_edge(input_path_img, resize_length=800)
     # color_tips()
 
     is_ip = True
