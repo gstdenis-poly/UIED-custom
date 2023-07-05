@@ -54,8 +54,8 @@ def run(input_path_img, output_root):
     resized_height = resize_height_by_longest_edge(input_path_img, resize_length=800)
     # color_tips()
 
-    is_ip = True
-    is_clf = True
+    is_ip = False
+    is_clf = False
     is_ocr = True
     is_merge = False
 
